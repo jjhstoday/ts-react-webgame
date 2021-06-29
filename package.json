@@ -1,0 +1,31 @@
+{
+  "name": "ts-react-webgame",
+  "version": "1.0.0",
+  "description": "React + TS Webgame 실습 <br> [웹 게임을 만들며 배우는 React에 TypeScript 적용하기 - 인프런 강좌](https://www.inflearn.com/course/react-typescript-webgame#)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjhstoday/ts-react-webgame.git"
+  },
+  "author": "Jihye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjhstoday/ts-react-webgame/issues"
+  },
+  "homepage": "https://github.com/jjhstoday/ts-react-webgame#readme",
+  "dependencies": {
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.3.4"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "webpack": "^5.41.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

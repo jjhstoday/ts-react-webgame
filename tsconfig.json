@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "lib": [
+      "es5",
+      "es2015",
+      "es2016",
+      "es2017", // async await
+      "es2020",
+      "dom" // 웹 환경
+    ],
+    "jsx": "react",
+    "esModuleInterop": true,
+  },
+}
