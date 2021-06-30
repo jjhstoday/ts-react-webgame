@@ -55,4 +55,30 @@ React + TS Webgame 실습 <br>
 <br>
 
 7. `!`
-    - 확실한 타입의 변수인데, 타입에러가 생길 경우 `변수!`으로 타입을 확신해준다.
+    - 확실한 타입의 변수인데, 타입에러가 생길 경우 | undefined도 되는 경우 `변수!`으로 타입을 확신해준다.
+
+<br>
+
+8. as const
+    - 확실한 값에는 `as const`를 붙여주면, 값이 타입으로 확정된다.
+
+<br>
+
+9. `type ImgCoords = typeof rspCoords[keyof typeof rspCoords]` 찬찬히 뜯어보기...🍗
+    - typeof rspCoords
+  
+       <img height="100" src="./images/1-1.png">
+
+    - keyof typeof rspCoords
+
+       <img height="30" src="./images/1-2.png">
+
+
+    - typeof rspCoords[keyof typeof rspCoords]
+
+       <img height="30" src="./images/1-3.png">
+      
+<br>
+
+10. `.includes`
+    - `.includes`를 사용하려면 tsconfig.json에 `es2016`을 설정해주어야 한다.
