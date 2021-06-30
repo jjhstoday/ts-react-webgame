@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-interface IState {
+interface State {
   word: string;
   value: string;
   result: string;
 }
 
-class WordRelay extends Component<{}, IState> {
+class WordRelay extends Component<{}, State> {
   state = {
     word: '지혜짱',
     value: '',
