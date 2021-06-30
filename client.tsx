@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader/root';
 
 // import GuGuDan from './GuGuDan';
-import WordRelay from './WordRelay';
+import NumberBaseball from './NumberBaseball';
 
-const Hot = hot(WordRelay);
+const Hot = hot(NumberBaseball);
 
 ReactDOM.render(<Hot />, document.querySelector('#root'));

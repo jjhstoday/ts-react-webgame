@@ -24,3 +24,8 @@ React + TS Webgame 실습 <br>
 - 타입스크립트 학습
   - [TypeScript 공식 문서 - Handbook](https://www.typescriptlang.org/ko/docs/handbook/intro.html)
   - [TypeScript 공식 문서 - What's New](https://www.typescriptlang.org/docs/handbook/release-notes/overview.html)
+
+- `useState([])` useState에서 빈배열 초기값은 타이핑 문제를 일으킨다.
+  - useState에 제네릭으로 타이핑 할 것!
+
+- webpack-cli@4버전 사용 시 명령어가 `webpack-dev-server` 대신에 `webpack serve --env development`로 바뀜
