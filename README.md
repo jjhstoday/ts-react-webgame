@@ -82,3 +82,11 @@ React + TS Webgame 실습 <br>
 
 10. `.includes`
     - `.includes`를 사용하려면 tsconfig.json에 `es2016`을 설정해주어야 한다.
+
+<br>
+
+11. 함수 컴포넌트 타이핑
+    - 🚫`SFC` - deprecated 
+    - 🚫`StatelessComponent` - deprecated
+    > React에서 hook이 들어오면서 함수컴포넌트는 더이상 stateless로 사용되지 않기 때문에, 사용하지 않는다!!
+
