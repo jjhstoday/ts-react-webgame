@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback, useEffect } from 'react';
+import React, { useReducer, useCallback, useEffect, Reducer } from 'react';
 import Table from './Table';
 
 interface ReducerState {
@@ -98,7 +98,10 @@ const reducer = (state: ReducerState, action: ReducerActions): ReducerState => {
 };
 
 export default function TicTacToe() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer<Reducer<ReducerState, ReducerActions>>(
+    reducer,
+    initialState
+  );
   const { tableData, turn, winner, recentCell } = state;
 
   useEffect(() => {
