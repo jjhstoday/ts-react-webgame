@@ -8,8 +8,9 @@ import { hot } from 'react-hot-loader/root';
 // import RSP from './RSP';
 // import Lotto from './Lotto';
 // import TicTacToe from './TicTacToe';
-import MineSearch from './MineSearch';
+// import MineSearch from './MineSearch';
+import Games from './Games';
 
-const Hot = hot(MineSearch);
+const Hot = hot(Games);
 
 ReactDOM.render(<Hot />, document.querySelector('#root'));
