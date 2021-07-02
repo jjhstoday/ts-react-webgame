@@ -7,11 +7,13 @@ export default function Table() {
 
   return (
     <table>
-      {Array(tableData.length)
-        .fill(null)
-        .map((tr, i) => (
-          <Tr rowIndex={i} />
-        ))}
+      <tbody>
+        {Array(tableData.length)
+          .fill(null)
+          .map((tr, i) => (
+            <Tr rowIndex={i} key={i} />
+          ))}
+      </tbody>
     </table>
   );
 }
