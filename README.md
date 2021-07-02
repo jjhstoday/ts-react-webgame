@@ -90,3 +90,13 @@ React + TS Webgame 실습 <br>
     - 🚫`StatelessComponent` - deprecated
     > React에서 hook이 들어오면서 함수컴포넌트는 더이상 stateless로 사용되지 않기 때문에, 사용하지 않는다!!
 
+<br>
+
+12. memo
+    - 자식컴포넌트에서 props를 받아올 때 자식컴포넌트에 감싸줌!
+
+<br>
+
+13. 라우터 타이핑
+    - hooks으로 사용할 경우, hooks자체에서 match, history, location props가 들어있기 때문에, props를 넘겨줄 필요가 없다.(간-편)
+    - `useLocation, useHistory, useRouteMatch`
