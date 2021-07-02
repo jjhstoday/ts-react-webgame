@@ -7,8 +7,9 @@ import { hot } from 'react-hot-loader/root';
 // import ResponseCheck from './ResponseCheck';
 // import RSP from './RSP';
 // import Lotto from './Lotto';
-import TicTacToe from './TicTacToe';
+// import TicTacToe from './TicTacToe';
+import MineSearch from './MineSearch';
 
-const Hot = hot(TicTacToe);
+const Hot = hot(MineSearch);
 
 ReactDOM.render(<Hot />, document.querySelector('#root'));
