@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader/root';
+import { Provider } from 'react-redux';
 
 // import GuGuDan from './GuGuDan';
 // import NumberBaseball from './NumberBaseball';
@@ -9,8 +10,16 @@ import { hot } from 'react-hot-loader/root';
 // import Lotto from './Lotto';
 // import TicTacToe from './TicTacToe';
 // import MineSearch from './MineSearch';
-import Games from './Games';
+// import Games from './Games';
 
-const Hot = hot(Games);
+import store from './store';
+import App from './App';
 
-ReactDOM.render(<Hot />, document.querySelector('#root'));
+const Hot = hot(App);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Hot />
+  </Provider>,
+  document.querySelector('#root')
+);
