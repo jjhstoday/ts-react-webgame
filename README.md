@@ -100,3 +100,8 @@ React + TS Webgame 실습 <br>
 13. 라우터 타이핑
     - hooks으로 사용할 경우, hooks자체에서 match, history, location props가 들어있기 때문에, props를 넘겨줄 필요가 없다.(간-편)
     - `useLocation, useHistory, useRouteMatch`
+
+<br>
+
+14. `ReturnType<typeof 함수명>`
+    - 함수의 리턴 타입을 가져오는 유틸리티
