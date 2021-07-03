@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { logIn, logOut } from './actions/user';
+import { logIn, logOut, ThunkDispatch } from './actions/user';
 import { UserState } from './reducers/user';
 import { Dispatch } from 'redux';
 import { RootState } from './reducers';
@@ -52,7 +52,7 @@ const mapStateToProps = (state: RootState) => ({
   posts: state.posts
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
+const mapDispatchToProps = (dispatch: ThunkDispatch) => ({
   dispatchLogIn: (data: { id: string; password: string }) =>
     dispatch(logIn(data)),
   dispatchLogOut: () => dispatch(logOut())
