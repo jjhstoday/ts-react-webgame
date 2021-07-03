@@ -1,61 +1,44 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { logIn, logOut, ThunkDispatch } from './actions/user';
+import React, { FunctionComponent } from 'react';
+import { connect, useSelector, useDispatch } from 'react-redux';
+import { logIn, logOut } from './actions/user';
 import { UserState } from './reducers/user';
-import { Dispatch } from 'redux';
 import { RootState } from './reducers';
 
-interface StateToProps {
-  user: UserState;
-}
+const App: FunctionComponent = () => {
+  const { isLoggingIn, data } = useSelector<RootState, UserState>(
+    state => state.user
+  );
+  const dispatch = useDispatch();
 
-interface DispatchToProps {
-  dispatchLogIn: ({ id, password }: { id: string; password: string }) => void;
-  dispatchLogOut: () => void;
-}
-
-class App extends Component<StateToProps & DispatchToProps> {
-  onLogIn = () => {
-    this.props.dispatchLogIn({
-      id: 'jihye',
-      password: '비밀번호'
-    });
-  };
-
-  onLogout = () => {
-    this.props.dispatchLogOut();
-  };
-
-  render() {
-    const { user } = this.props;
-    return (
-      <div>
-        {user.isLoggingIn ? (
-          <div>로그인 중</div>
-        ) : user.data ? (
-          <div>{user.data.nickname}</div>
-        ) : (
-          '로그인 해주세요.'
-        )}
-        {!user.data ? (
-          <button onClick={this.onLogIn}>로그인</button>
-        ) : (
-          <button onClick={this.onLogout}>로그아웃</button>
-        )}
-      </div>
+  const onLogIn = () => {
+    dispatch(
+      logIn({
+        id: 'jihye',
+        password: '비밀번호'
+      })
     );
-  }
-}
+  };
 
-const mapStateToProps = (state: RootState) => ({
-  user: state.user,
-  posts: state.posts
-});
+  const onLogout = () => {
+    dispatch(logOut());
+  };
 
-const mapDispatchToProps = (dispatch: ThunkDispatch) => ({
-  dispatchLogIn: (data: { id: string; password: string }) =>
-    dispatch(logIn(data)),
-  dispatchLogOut: () => dispatch(logOut())
-});
+  return (
+    <div>
+      {isLoggingIn ? (
+        <div>로그인 중</div>
+      ) : data ? (
+        <div>{data.nickname}</div>
+      ) : (
+        '로그인 해주세요.'
+      )}
+      {!data ? (
+        <button onClick={onLogIn}>로그인</button>
+      ) : (
+        <button onClick={onLogout}>로그아웃</button>
+      )}
+    </div>
+  );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
