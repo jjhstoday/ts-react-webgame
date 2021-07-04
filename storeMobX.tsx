@@ -1,9 +1,19 @@
 import { observable, action } from 'mobx';
 
-const userStore = observable({
+export interface User {
+  nickname: string;
+  password: string;
+}
+interface UserStore {
+  isLoggingIn: boolean;
+  data: User | null;
+  logIn: (data: User) => void;
+  logOut: () => void;
+}
+const userStore = observable<UserStore>({
   isLoggingIn: false,
   data: null,
-  logIn: action(data => {
+  logIn: action((data: User) => {
     userStore.isLoggingIn = true;
     setTimeout(
       action(() => {
@@ -19,9 +29,13 @@ const userStore = observable({
   })
 });
 
-const postStore = observable({
+interface PostStore {
+  data: string[];
+  addPost: (data: string) => void;
+}
+const postStore = observable<PostStore>({
   data: [],
-  addPost: action(data => {
+  addPost: action((data: string) => {
     postStore.data.push(data);
   })
 });

@@ -3,14 +3,26 @@ import { useLocalStore, useObserver } from 'mobx-react';
 import { action } from 'mobx';
 import { userStore } from './storeMobX';
 
+interface LocalStore {
+  name: string;
+  password: string;
+  onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangePassword: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 export default function AppMobX() {
-  const state = useLocalStore(() => ({
+  const state = useLocalStore<LocalStore>(() => ({
     name: '',
     password: '',
-    onChangeName: action(function (e) {
+    onChangeName: action(function (
+      this: LocalStore,
+      e: React.ChangeEvent<HTMLInputElement>
+    ) {
       this.name = e.target.value;
     }),
-    onChangePassword: action(function (e) {
+    onChangePassword: action(function (
+      this: LocalStore,
+      e: React.ChangeEvent<HTMLInputElement>
+    ) {
       this.password = e.target.value;
     })
   }));
