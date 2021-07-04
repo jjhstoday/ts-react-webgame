@@ -13,7 +13,7 @@ React + TS Webgame 실습 <br>
 
 <br>
 
-## 🎱 학습 내용 (updating...)
+## 🎱 학습 내용
 ### 타입스크립트 학습
 - [TypeScript 공식 문서 - Handbook](https://www.typescriptlang.org/ko/docs/handbook/intro.html)
 - [TypeScript 공식 문서 - What's New](https://www.typescriptlang.org/docs/handbook/release-notes/overview.html)
