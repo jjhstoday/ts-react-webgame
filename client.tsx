@@ -12,14 +12,17 @@ import { Provider } from 'react-redux';
 // import MineSearch from './MineSearch';
 // import Games from './Games';
 
-import store from './store';
-import App from './App';
+// import store from './store';
+// import App from './App';
 
-const Hot = hot(App);
+import { StoreProvider } from './Context';
+import AppMobX from './AppMobX';
+
+const Hot = hot(AppMobX);
 
 ReactDOM.render(
-  <Provider store={store}>
+  <StoreProvider>
     <Hot />
-  </Provider>,
+  </StoreProvider>,
   document.querySelector('#root')
 );
